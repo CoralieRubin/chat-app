@@ -1,21 +1,17 @@
 import React from 'react';
 import './contact.css';
 
-function Contact(props) {
+function Contact({ image, name, status }) {
   return (
     <div className="Contact">
       <figure className="avatar">
-        <img src={props.avatar} alt={props.name} />
+        <img src={image} alt={name} />
       </figure>
       <div className="columnRight">
-        <cite className="name">{props.name}</cite>
+        <cite className="name">{name}</cite>
         <div className="status">
-          <span
-            className={props.online ? 'status-online' : 'status-offline'}
-          ></span>
-          <span className="status-text">
-            {props.online ? 'online' : 'offline'}
-          </span>
+          <span className={status ? 'status-online' : 'status-offline'}></span>
+          <span className="status-text">{status ? 'online' : 'offline'}</span>
         </div>
       </div>
     </div>
